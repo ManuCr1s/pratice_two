@@ -1,4 +1,7 @@
-/* IMPORTANDO FUENTES EXTERNAS */
+/* IMPORTANDO FUENTES EXTERNAS Y ESTILOS GENERALES*/
+body{
+    background-image:url("../img/pattern.png");
+}
 @font-face {
     font-family: "BebasNeue";
     src: url("../fonts/BebasNeue.otf");
