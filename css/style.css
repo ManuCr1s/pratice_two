@@ -75,7 +75,7 @@ body{
 }
 /* ESTILOS DEL CUERPO DEL DOCUMENTO */
 /* ESTILO DEL BANNER */
-#container-wrap{
+#container-wrap,#footer-wrap{
     width:82%;
     margin: 0 auto;
     padding: 1.2% 0 2% 0;
@@ -320,4 +320,61 @@ body{
     0 3px 7px rgba(0, 0, 0,.3),
     0 1px white inset,
     0 -3px 2px rgba(0, 0, 0,.3) inset;
+}
+/* ESTILOS DEL PIE DE LA PAGINA */
+#main-footer{
+    background-color: black;
+    min-height: 400px;
+}
+.footer-elements-wrap{
+    float: left;
+    width:23%;
+    margin: 0 5%;
+}
+.title-footer-wrap{
+    font-family: BebasNeue;
+    letter-spacing: .1em;
+    text-align: center;
+    background-color: #E1E1E1;
+    font-size: 1.5em;
+    padding:2%;
+    margin: 2%;
+    border-radius: 5px;
+}
+.list-footer-wrap{
+    color: white;
+    font-size: 1.5em;
+    line-height: 50px;
+    position: relative;
+}
+.item-list-footer{
+    color: #34B2DE;
+    text-decoration: none;
+    font-family: TrebuchetMS;
+    font-size: 1.3rem;
+}
+ul.list-footer-wrap > li+li::after{
+        position: absolute;
+        display: block;
+        left: 15%;
+        content: "";
+        width: 75%;
+        background-color: rgb(133, 133, 133);
+        height: 1px;
+}
+.icon-footer-html{
+        margin: 6% 15%;
+        width: 80%;
+        height: 5%;
+}
+.image-footer-wrap{
+    width: 15%;
+    height: 15%;
+    margin: 6% 0;
+}
+.reference-footer-wrap{
+    color: white;
+    font-size: 1.2em;
+    font-family: BebasNeue;
+    text-align: center;
 }
