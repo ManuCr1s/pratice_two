@@ -1,3 +1,5 @@
+/* IMPORTANDO ANIMACIONES DE CSS */
+/* @import url("animations.css"); */
 /* IMPORTANDO FUENTES EXTERNAS Y ESTILOS GENERALES*/
 body{
     background-image:url("../img/pattern.png");
@@ -41,15 +43,54 @@ body{
     width: 17%;
     max-height: 40px;
     line-height: 40px;
+    cursor: pointer;
+    transition: all 300ms linear;
+    overflow:hidden;
+}
+#header-logo:hover{
+    background-color: #ccc;
+    color: black;
+}
+#header-logo:hover #logo-name{
+    animation: move_logo 300ms linear;
+}
+@keyframes move_logo{
+    from{
+        transform: translate(200%);
+    }
+    to{
+        transform: translate(0);
+    }
+}
+#header-logo:hover #logo-symbol{
+    animation: up-logo 300ms linear;
+}
+@keyframes up-logo{
+    from{
+        transform: translateY(200%);
+    }
+    to{
+        transform: translateY(0);
+    }
 }
 #logo-symbol{
+    display: inline-block;
     margin-left:10%;
     margin-right: 5%;
     font-family: Simbol;
     font-size: 1.8em;
-
+    animation: to_turn 2s linear infinite;
+}
+@keyframes to_turn{
+    from{
+        transform: rotateZ(0);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
 }
 #logo-name{
+    display: inline-block;
     font-size: 1.8em;
     font-weight: 500;
     letter-spacing: 1px;
@@ -68,10 +109,16 @@ body{
     margin-left: 32%;
 }
 .enlace-item-menu{
+    display: block;
     text-decoration: none;
     color: white;
     font-size: 1.1em;
     letter-spacing: 1px;
+    transition: all 500ms ease;
+}
+.enlace-item-menu:hover{
+    color: #37bcf9;
+    transform: scale(1.2,1.2);
 }
 /* ESTILOS DEL CUERPO DEL DOCUMENTO */
 /* ESTILO DEL BANNER */
@@ -85,6 +132,7 @@ body{
     margin-bottom: 5%;
 }
 #banner-element-title{
+    display: block;
     margin: 0;
     padding: 0;
     background-image: url("../img/bakbaner.png");
@@ -99,6 +147,18 @@ body{
     text-shadow: 1px 1px 2px black;
     letter-spacing: 2px;
     font-weight: 100;
+    animation: banner 5s linear;
+}
+@keyframes banner{
+    0%{
+        background-position: center left;
+    }
+    50%{
+        background-position: center top;
+    }
+    100%{
+        background-position: center left;
+    }
 }
 /* ESTILOS ELEMENTOS DE LISTA */
 #list-items{
@@ -122,14 +182,56 @@ body{
     min-height: 250px;
     border: 1px solid rgb(206, 206, 206);
     padding: 2%;
+    transition: all 500ms ease;
+    overflow: hidden;
+}
+.item-link:hover{
+    background-color:black;
+}
+.item-link:hover .item-simbol{
+    font-size: 3em;
+    color: #38BCFA;
+    animation: icon-up 500ms linear;
+}
+@keyframes icon-up{
+    from{
+        transform: translateY(-200%);
+    }
+    to{
+        transform: translateY(0) scale(1.2,1.2);
+    }
 }
 .item-simbol{
     color: black;
     font-size: 2.5em;
     font-family: Simbol;
 }
+.item-link:hover .item-title{
+    color: white;
+    animation: title-up 500ms linear;
+}
+@keyframes title-up{
+    from{
+        transform: translateY(-600%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
 .item-title{
     font-size:1.2em;
+}
+.item-link:hover .item-description{
+    color: white;
+    font-weight: 200;
+    animation: description 500ms linear;
+}
+@keyframes description{
+    from{
+        transform: translateX(-200%);
+    }to{
+        transform: translateX(0);
+    }
 }
 .item-description{
     margin: 0;
@@ -158,6 +260,27 @@ body{
     background-color: white;
     border: 1px solid #DFDFDF;
     font-family: TrebuchetMS; 
+}
+.border-animations{
+    display:block;
+    transition: all 1s ease;
+}
+.border-animations:hover{
+    border-radius: 20px;
+    border: 20px solid #ccc;
+    animation: border-color 3s linear infinite;
+}
+@keyframes border-color{
+    0%{
+        border-color: green;
+    }25%{
+        border-color: rgb(93, 144, 240);
+    }50%{
+        border-color: yellow;
+    }100%
+    {
+        border-color: rgb(93, 144, 240);
+    }
 }
 .title-articles-elements{
     font-size: 1.4em;
@@ -305,11 +428,30 @@ body{
     0 1px white inset,
     0 -3px 2px rgba(0, 0, 0,.3) inset;
 }
+.item-icon-social{
+    position: relative;
+    cursor: pointer;
+}
 .icon-social-secondary{
     font-family: Simbol;
     font-size: 2.5em;
     line-height: 200%;
     color: black;
+}
+.name-icon-social{
+    font-family: TrebuchetMS;
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    opacity: 0;
+    font-weight: 800;
+    font-size: 1em;
+    transition: all 1s ease;
+}
+.item-icon-social:hover .name-icon-social{
+    opacity: 1;
+    transform: translateX(100%);
 }
 .team-secondary{
     background-color: white;
